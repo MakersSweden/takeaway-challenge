@@ -1,4 +1,3 @@
-require 'item'
 require 'customer'
 
 describe 'restaurant' do
@@ -10,19 +9,19 @@ describe 'restaurant' do
   end
 
     it 'creates a menu' do
-    expect(subject.menu).to be_kind_of Hash
+    expect(subject.menu).to be_kind_of Array
   end
 
     it 'menu contains dishes when created' do
-    expect(subject.menu[:nr1]).to be_kind_of Item
+    expect(subject.menu[0]).to be_kind_of Hash
   end
 
    it 'dishes has a name' do
-    expect(subject.menu[:nr1].name).to eq "Fried rice"
+    expect(subject.menu[0][:name]).to eq "Fried rice"
   end
 
      it 'dishes has a price' do
-    expect(subject.menu[:nr1].price).to eq 65
+    expect(subject.menu[0][:price]).to eq 65
   end
 
 end

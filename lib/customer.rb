@@ -1,3 +1,5 @@
+require './lib/restaurant.rb'
+
 class Customer
   attr_accessor :order
 
@@ -5,15 +7,28 @@ class Customer
     @order = []
   end
 
-  def add_to_order(nr, dish)
-    (nr).times do
+  def add_to_order(qty, dish)
+    (qty).times do
       self.order << (dish)
     end
   end
 
+  # def order_tot
+  #     sum = self.order.map(&:price).inject(0, &:+)
+  #     sum
+  # end
+
   def order_total
-      sum = self.order.map(&:price).inject(0, &:+)
-      sum
+    total = 0
+    sum = @order.each do |item|
+      total = total + item[:price]
+    end
+    total
+  end
+
+  def place_order
+    sum = self.order.map(&:price).inject(0, &:+)
+    sum
   end
 
 end
