@@ -5,32 +5,41 @@ class Menu
     @menu_items = menu_items
     @todays_menu = []
 
-    # Inspired by https://www.ruby-lang.org/en/documentation/quickstart/3/
+    # This conditional is probably not needed, but it
+    # doesn't do harm (I hope) and it serves as a reminder
+    # to me that this kind of checking is possible and
+    # is sometimes desirable. I got my inspiration from:
+    # https://www.ruby-lang.org/en/documentation/quickstart/3/
     if @menu_items.nil?
-      puts "We have no menu items today."
+      # Do something, such as raise an error
     elsif @menu_items.respond_to?("each")
       @menu_items.each do |menu_item|
         @todays_menu.push(menu_item)
-        puts "#{menu_item.name}"
       end
     else
       @todays_menu.push(menu_items)
-      puts "You can get anything you want as long as it is a #{@menu_items}!"
     end
   end
 
   def to_s
-    if @todays_menu.nil?
+    if @todays_menu.length == 0
       puts "We have no menu items today."
-    elsif @todays_menu.respond_to?("each")
+    elsif @todays_menu.length >= 2
       puts "We have the following items today:"
       @todays_menu.each do |menu_item|
         puts "#{menu_item.name}"
       end
     else
-      @todays_menu.push(todays_menu)
       puts "We only have #{@todays_menu} today."
     end
   end
 
+  def add_menu_item(menu_item_to_add)
+    @todays_menu.push(menu_item_to_add)
+  end
+
+  def remove_menu_item(menu_item_to_remove)
+    # Not sure if will need this method, so just stubbing out.
+    # If need, might change @todays_menu to be hash vs. array.
+  end
 end
