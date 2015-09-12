@@ -1,5 +1,5 @@
-require 'restaurant'
 require 'item'
+require 'customer'
 
 describe 'restaurant' do
 
@@ -24,6 +24,5 @@ describe 'restaurant' do
      it 'dishes has a price' do
     expect(subject.menu[:nr1].price).to eq 65
   end
-
 
 end
