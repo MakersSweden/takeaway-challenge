@@ -10,6 +10,12 @@ class Customer
     self.my_order.push dish
   end
   
-  
+  def get_total
+    values = []
+    self.my_order.each do |dish|
+      values.push (dish[:price] * dish[:qty])
+    end
+    values.inject 0, :+
+  end
   
 end
