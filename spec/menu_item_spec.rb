@@ -1,4 +1,4 @@
-require 'menu_item'
+require "menu_item"
 
 describe MenuItem do
   # I have spent some hours trying to figure out the best way,
