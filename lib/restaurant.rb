@@ -12,5 +12,9 @@ class Restaurant
     self.dishes.push dish
   end
   
+  def send_notification(reciepient)
+    'Your order has been received'
+  end
+  
   
 end
