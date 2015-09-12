@@ -1,4 +1,5 @@
 require 'restaurant'
+require 'twilio-ruby'
 
 describe Restaurant do
   
@@ -7,6 +8,10 @@ describe Restaurant do
   
   it 'has a list of dishes' do
     expect(subject.dishes).to be_kind_of Array
+  end
+  
+  it 'has a twilio_client set up' do
+    expect(subject.twilio_client).to be_kind_of Twilio::REST::Client
   end
   
   it 'adds a dish to list of dishes' do
@@ -18,7 +23,5 @@ describe Restaurant do
   it '#send_notification responds with a standard message' do
     expect(subject.send_notification(customer)).to eq 'Your order has been received'
   end
-  
-  
   
 end
