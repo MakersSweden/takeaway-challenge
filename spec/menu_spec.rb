@@ -20,10 +20,10 @@ describe Menu do
     expect(menu.todays_menu[0].name).to eq("Burger")
   end
 
-  # This is not working, and might not even be a requirement,
-  # so I will stop playing with it (I was doing that because
+  # This is not working, and is not even be a requirement,
+  # so I will stop playing with it.  I was playing because
   # I was curious about how it's done.  I still don't know,
-  # but must move one.
+  # but must move on now!
   xcontext "A '$5 Shake' is added to today's menu" do
     let(:menu_item_3) { MenuItem.new(3, "$5 Shake", "The best shake in the world", 5, "USD") }
     let(:menu2) { menu.add_menu_item(menu_item_3) }
@@ -36,5 +36,4 @@ describe Menu do
       expect(menu2.todays_menu.length).to eq(3)
     end
   end
-
 end

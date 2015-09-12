@@ -34,12 +34,13 @@ class Menu
     end
   end
 
+  # Works in IRB, but I can't get the unit tests to work.
+  # Anyway, it's a requirement, so I am abbandoning this.
   def add_menu_item(menu_item_to_add)
     @todays_menu.push(menu_item_to_add)
   end
 
+  # Not a requirement, so I am abbandoning.
   def remove_menu_item(menu_item_to_remove)
-    # Not sure if will need this method, so just stubbing out.
-    # If need, might change @todays_menu to be hash vs. array.
   end
 end
