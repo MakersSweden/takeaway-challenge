@@ -3,9 +3,9 @@ require "menu"
 
 describe Menu do
 
+  # TODO: Learn how to use doubles/specs/mocks instead of this:
   let(:menu_item_1) { MenuItem.new(1, "Burger", "The best burger in the world", 100, "USD") }
   let(:menu_item_2) { MenuItem.new(2, "Fries", "The best fries in the world", 50, "USD") }
-
   let(:menu) { Menu.new([menu_item_1, menu_item_2]) }
 
   it "is a kind of Menu" do

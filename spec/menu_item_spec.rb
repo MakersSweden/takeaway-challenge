@@ -1,9 +1,9 @@
 require "menu_item"
 
 describe MenuItem do
-  # I have spent some hours trying to figure out the best way,
-  # actually ANY WAY, to double/mock/stub properly in RSpec.
-  # I need help.  I need a good example to follow, please. Thks!
+  # I have spent some hours trying to figure out the best way
+  # (actually ANY WAY!) to double/mock/stub properly (AT ALL!).
+  # I need help, such as a good example to follow, please. Thks!
   # In the meantime, I will press on by using "let" to make new
   # instances of classes, as shown below:
   let(:menu_item) { MenuItem.new(1, "Burger", "The best burger in the world", 100, "USD") }
