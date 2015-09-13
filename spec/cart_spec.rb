@@ -14,8 +14,44 @@ describe Cart do
     expect(cart).to be_a_kind_of(Cart)
   end
 
-  xit "adds a 'Burger' to the cart" do
-    expect(cart.add_item_to_cart(order_item_1)).to # FIXME: Add the Burger
+  context "a 'Burger' is added to the cart" do
+    before do
+      Cart.instance.add_item_to_cart(order_item_1)
+    end
+    it "adds a 'Burger' to the cart" do
+      # See FOOTNOTE 1
+      expect(Cart.instance.cart[0].name).to eq("Burger")
+    end
   end
 
+    context "an order of 'Fries' are added to the cart" do
+    before do
+      Cart.instance.add_item_to_cart(order_item_2)
+    end
+    it "adds an order of 'Fries' to the cart" do
+      expect(Cart.instance.cart[1].name).to eq("Fries")
+    end
+  end
 end
+
+# FOOTNOTE 1
+
+# The following is what RSpec barfed out
+# when my expect statement was this:
+# expect(Cart.instance.cart[0].name).to equal("Burger")
+# instead of what it is now, which is this:
+# expect(Cart.instance.cart[0].name).to eq("Burger")
+
+# Failures:
+
+#   1) Cart a 'Burger' is added to the cart adds a 'Burger' to the cart
+#      Failure/Error: expect(Cart.instance.cart[0].name).to equal("Burger")
+
+#        expected #<String:70238977867780> => "Burger"
+#             got #<String:70238977868160> => "Burger"
+
+#        Compared using equal?, which compares object identity,
+#        but expected and actual are not the same object. Use
+#        `expect(actual).to eq(expected)` if you don't care about
+#        object identity in this example.
+#      # ./spec/cart_spec.rb:22:in `block (3 levels) in <top (required)>'

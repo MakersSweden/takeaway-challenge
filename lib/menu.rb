@@ -3,7 +3,7 @@ class Menu
 
   def initialize(menu_items)
     @menu_items = menu_items
-    @todays_menu = [] # Instead of array, maybe use hash??
+    @todays_menu = [] # FIXME: Hash? Load from file!
 
     # This conditional is probably not needed, but it
     # doesn't do harm (actually, it might) and it serves as a
