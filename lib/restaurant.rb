@@ -1,15 +1,15 @@
-require 'dish'
+require './lib/dish.rb'
 require 'twilio-ruby'
 
 class Restaurant
-  attr_accessor :dishes, :twilio_client
+  attr_accessor :dishes
   
-  ACCOUNT_SID = 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-  AUTH_TOKEN = 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+  #Twilio API Test credentials
+  TWILIO_SID = 'AC5d5a3b293f9b27dbe239b8d29dd67cae' 
+  TWILIO_AUTH = '55b41363df5297ce5c3e9450ad689518' 
   
   def initialize
     self.dishes = []
-    self.twilio_client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
   end
   
   def new_dish(name, price)
@@ -18,12 +18,8 @@ class Restaurant
   end
   
   def send_notification(reciepient)
-    self.twilio_client.messages.create(
-      from: '+46723612527',
-      to: reciepient.phone,
-      body: 'Your order has been received'
-    )   
+    twilio_client = Twilio::REST::Client.new TWILIO_SID, TWILIO_AUTH
+    twilio_client.account.messages.create( from: '+15005550006', to: '+46723612527', body: 'Your order has been received')   
   end
-  
   
 end
