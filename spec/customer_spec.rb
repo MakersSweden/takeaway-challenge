@@ -13,12 +13,11 @@ describe Customer do
     expect(customer.cust_id).to eq(1)
   end
 
-  it "the customer's customer_number is 'Chris'" do
+  it "the customer's name is 'Chris'" do
     expect(customer.cust_name).to eq("Chris")
   end
 
-  it "the customer's customer_number is '+46738073188'" do
+  it "the customer's phone number is '+46738073188'" do
     expect(customer.cust_phone).to eq("+46738073188")
   end
-
 end

@@ -1,6 +1,7 @@
 require_relative "menu_item"
 require_relative "menu"
 require_relative "order_item"
+require_relative "customer"
 
 class Cart
   attr_accessor :cart
@@ -52,4 +53,7 @@ if __FILE__ == $0
   Cart.instance.add_item_to_cart(order_item_1)
   Cart.instance.add_item_to_cart(order_item_2)
   Cart.instance.to_s
+  customer = Customer.new(1, "Chris", "+46738073188")
+  order = Order.new(customer, Cart.instance)
+  order.customer.cust_name
 end
