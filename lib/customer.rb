@@ -1,4 +1,5 @@
 require './lib/restaurant.rb'
+require_relative 'order_confirmation'
 
 class Customer
   attr_accessor :order
@@ -25,6 +26,17 @@ class Customer
     end
     total
   end
+
+  def price_check(restaurant)
+    order_sum = []
+    self.order.select {|r| price_check << r[:price] && r[:name]}
+    price_check = []
+    (restaurant).menu.select {|r| price_check << r[:price] if r[:name] == "Fried rice"}
+    price_check
+  end
+
+
+#Sparar priset på ’Pizza’ i arrayen ’price_check’
 
   def place_order
     sum = self.order.map(&:price).inject(0, &:+)
