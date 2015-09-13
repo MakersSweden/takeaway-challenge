@@ -2,11 +2,20 @@ class Menu
 
 	attr_accessor :menu
 
-	def initialize 
-		@menu = { "Svalbon" => 113.00, "Kråkfötter, 
-			per par" => 77.75, "Grissvål" => 187.00, 
-			"Lungmos" => 55.00, "Nageltrång" => 23.50 }
+	def initialize
+
+		menu = Hash.new()
+		menu['Svalbon'] = 113.0
+		menu['Kråkfötter, per par'] = 76.0
+		menu['Grissvål'] = 187.0
+		menu['Fjärilsögonlock'] = 55.0
+		menu['Nageltrång'] = 23.5
+
+		Menu = menu
+
 	end
+		
+
 
 	#def add_dishes_to_menu(price, dish)
 	#	 x@menu[dish] = price

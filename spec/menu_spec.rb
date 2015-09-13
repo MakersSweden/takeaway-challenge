@@ -1,13 +1,19 @@
 require 'menu'
+#require 'byebug'
 
-	describe 'Menu' do
+	describe Menu do
 
-		subject { Menu.new } 
+			subject{ Menu.new } 
+		
 
-		it 'holds a specifc dish with prices' do
-		expect(subject.menu).to include({"Nageltrång" => 23.50})
+		it "is a hash" do 
+			expect(subject).to be_kind_of Hash  
+		end
+
+
+		it 'holds a specific dish with a corresponding price' do
+		expect(subject).to include :Nageltrång => 23.50
 		end
 	
 	end
 
-end

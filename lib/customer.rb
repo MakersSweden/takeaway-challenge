@@ -1,9 +1,21 @@
 class Customer
-
-
-	def show_menu 
 	
+	attr_accessor :menu
 
+	def initialize 
+
+		#Create a new menu and a new customer
+		@menu = menu.new 
+		@customer = customer.new
+
+	end
+
+
+	#Wants to get menu from menu.rb, and print out the menu.
+	def show_menu
+		@menu.each do | item, price |
+		puts "#{item}: SEK#{price}"
+		end
 	end
 
 end

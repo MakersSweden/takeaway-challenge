@@ -1,28 +1,28 @@
-require './lib/menu.rb'
 
+class Order
 
-class New_Order
+	 
 
-	attr_accessor  :filled 
+	attr_accessor :menu
 
 	def initialize
-		@show_menu = menu.new
-		@customer_choice = Order.new
+		@menu = menu.new
 		@new_order = []
 	end
 
-	def show_menu 
+	def Welcome_statement 
 		puts "Välkommen till Äckel och Päckel. Det här 
 		är vår menu idag - vänligen välj !"
-		puts menu.new
+		
 		
 	end
 
 	def add_to_new_order
-		new_order.dish = gets.chomp
+		@dish = gets.chomp
 
-		#bör fråga om kunden vill lägga ytterligare en 
-		#och om inte, sätta samman ordern 
+		#bör i nästa steg fråga om kunden vill lägga 
+		#ytterligare en order och om inte, sätta samman 
+		#den totala ordern 
 
 	end
 
