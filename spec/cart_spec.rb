@@ -8,14 +8,14 @@ describe Cart do
   let(:menu) { Menu.new([menu_item_1, menu_item_2]) }
   let(:order_item_1) { OrderItem.new(menu, 0, 1) }
   let(:order_item_2) { OrderItem.new(menu, 1, 2) }
-  let(:cart) { Cart.send(:new) }
+  let(:cart) { Cart.send(:new) } # See http://stackoverflow.com/a/23901644
 
   it "is a kind of Cart" do
     expect(cart).to be_a_kind_of(Cart)
   end
 
   xit "adds a 'Burger' to the cart" do
-    expect(cart.load_item(order_item_1)).to # Add the Burger
+    expect(cart.add_item_to_cart(order_item_1)).to # FIXME: Add the Burger
   end
 
 end
