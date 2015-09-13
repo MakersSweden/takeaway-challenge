@@ -1,12 +1,13 @@
 require 'menu'
 
-describe 'Menu' do
+	describe 'Menu' do
 
-	subject { Menu.new } 
+		subject { Menu.new } 
 
-	it 'holds a list of dishes with prices' do
-	expect(subject.menu).to include({"Nageltrång" => 23.50})
-
+		it 'holds a specifc dish with prices' do
+		expect(subject.menu).to include({"Nageltrång" => 23.50})
+		end
+	
 	end
 
 end
