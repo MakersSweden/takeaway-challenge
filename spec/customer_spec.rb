@@ -34,4 +34,18 @@ describe Customer do
     expect(subject.get_total).to eq 140   
   end
   
+  it 'validate total' do
+    allow(restaurant).to receive(:dishes) 
+    dish = menu.dishes[1]
+    subject.order_dish(menu, dish, 2) 
+    result = subject.validate_total(subject.my_order, menu)
+    expect(result).to eq true
+  end
+  
+  it 'raises error if validate total returns false' do
+    menu.dishes[0][:price] = 20
+    byebug
+    expect{subject.validate_total(subject.my_order, menu)}.to raise_error 'foo'
+  end
+  
 end

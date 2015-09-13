@@ -10,13 +10,25 @@ class Customer
   def order_dish(restaurant, dish, qty)
     dish[:qty] = qty
     self.my_order.push dish
-    restaurant.send_notification(self)
+    #restaurant.send_notification(self)
   end
   
-  def get_total
+  def validate_total(order, restaurant)
+    raise 'foo' unless get_total(order) == menu_check(restaurant, order)
+  end
+  
+  def get_total(order)
     values = []
-    self.my_order.each do |dish|
+    order.each do |dish|
       values.push (dish[:price] * dish[:qty])
+    end
+    values.inject 0, :+
+  end
+  
+  def menu_check(restaurant, order)
+    values = []
+    order.each do |dish|      
+      restaurant.dishes.select {|r| values << (r[:price] * dish[:qty]) if r[:name] == dish[:name] }
     end
     values.inject 0, :+
   end
