@@ -12,11 +12,11 @@ class Customer
 
 
 	#Wants to get menu from menu.rb, and print out the menu.
-	def show_menu
-		@menu.each do | item, price |
-		puts "#{item}: SEK#{price}"
-		end
-	end
+	#def show_menu
+		#@menu.each do | item, price |
+		#puts "#{item}: SEK#{price}"
+		#end
+	#end
 
 end
 
