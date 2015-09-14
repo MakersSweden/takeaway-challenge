@@ -19,9 +19,9 @@ class Cart
   end
 
   def add_item_to_cart(order_item)
-    @cart.push(order_item)
     cost = order_item.cost.to_i
     @total_cost += cost
+    @cart.push(order_item)
   end
 
   def to_s
@@ -50,7 +50,7 @@ if __FILE__ == $0
   menu = Menu.new([menu_item_1, menu_item_2])
   order_item_1 = OrderItem.new(menu, 0, 1)
   order_item_2 = OrderItem.new(menu, 1, 2)
-  Cart.instance.add_item_to_cart(order_item_1)
+  Cart.instance.add_item_to_cart(order_item_1) # Comment from Thomas: "Why use Cart.instance vs storing that instance in a variable?"
   Cart.instance.add_item_to_cart(order_item_2)
   Cart.instance.to_s
   customer = Customer.new(1, "Chris", "+46738073188")

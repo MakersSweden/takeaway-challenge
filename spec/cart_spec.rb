@@ -16,7 +16,7 @@ describe Cart do
 
   context "a 'Burger' is added to the cart" do
     before do
-      Cart.instance.add_item_to_cart(order_item_1)
+      Cart.instance.add_item_to_cart(order_item_1) # Comment from Thomas: "Why use Cart.instance vs storing that instance in a variable?"
     end
     it "adds a 'Burger' to the cart" do
       # See FOOTNOTE 1
@@ -24,7 +24,7 @@ describe Cart do
     end
   end
 
-    context "an order of 'Fries' are added to the cart" do
+    context "an order of 'Fries' is added to the cart" do
     before do
       Cart.instance.add_item_to_cart(order_item_2)
     end
