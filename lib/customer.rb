@@ -1,5 +1,5 @@
 require './lib/restaurant.rb'
-require_relative 'order_confirmation'
+require './lib/order_confirmation'
 
 class Customer
   attr_accessor :order
