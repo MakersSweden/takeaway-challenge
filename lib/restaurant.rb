@@ -10,13 +10,6 @@ class Restaurant
   def initialize
     super
     @order = []
-    # @menu = [{name: "Fried rice", price: 65},
-    #           {name: "Fried noodles", price: 75},
-    #           {name: "Curry stew", price: 90},
-    #           {name: "Tandoori chicken", price: 95},
-    #           {name: "Chikken tikka", price: 70}]
-  end
-
 
 
   def welcome
@@ -41,27 +34,28 @@ class Restaurant
   end
 
   def user_input
-    user_input = gets.chomp.to_i
+    user_input = gets.chomp
   end
 
   def verify_input_dish(dish)
-    dish >=0 && dish < 4 ? true : false
+    dish >=0 && dish <= 4 ? true : false
   end
 
   def verify_input_qty(qty)
-    qty >=0 && qty < 10 ? true : false
+    qty >=0 && qty <= 10 ? true : false
   end
 
-  def add_to_order#(qty, dish)
+  def add_to_order
     puts "Choose dish nr from menu above"
-    dish = user_input
+    dish = user_input.to_i
     if verify_input_dish(dish)
       puts "Choose qty for your dish"
-      qty = user_input
+      qty = user_input.to_i
         if verify_input_qty(qty)
           (qty).times do
           self.order << menu[(dish)]
           end
+          add_more?
         else
           puts "Sorry, wrong input, choose again."
           add_to_order
@@ -70,6 +64,31 @@ class Restaurant
       puts "Sorry, wrong input, choose again."
       add_to_order
     end
+  end
+
+  def add_more?
+    puts "Would you like to add anything else to your order yes/no?"
+    status = user_input
+      if status == "yes"
+        show_menu
+      elsif status == "no"
+        order_overview
+      else
+        puts "Sorry, wrong input, choose again."
+        add_more?
+      end
+  end
+
+  def order_overview
+    puts "You have ordered:"
+    order.each do |item, index|
+      puts "#{index} #{item[:name]} #{item[:price]} kr"
+    end
+    puts "And your total is:"
+    order_total
+    puts "A confirmation has been sent via sms."
+    puts "Thank you and welcome back!"
+
   end
 
   def order_total
