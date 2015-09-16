@@ -1,8 +1,10 @@
 require './lib/customer.rb'
 require './lib/order_confirmation'
+require './lib/menu'
 
 class Restaurant
   include OrderConfirmation
+  include Menu
 
 
   attr_accessor :order
@@ -17,20 +19,6 @@ class Restaurant
     puts 'Welcome to my restaurant.'
     puts 'Please order from our menu below.'
     show_menu
-  end
-
-  def menu
-      @menu = [{name: "Fried rice", price: 65},
-              {name: "Fried noodles", price: 75},
-              {name: "Curry stew", price: 90},
-              {name: "Tandoori chicken", price: 95},
-              {name: "Chikken tikka", price: 70}]
-  end
-
-  def show_menu
-    menu.each_with_index do |item, index|
-      puts "#{index} #{item[:name]} #{item[:price]} kr"
-    end
     add_to_order
   end
 
