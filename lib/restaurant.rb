@@ -10,6 +10,7 @@ class Restaurant
   def initialize
     super
     @order = []
+  end
 
 
   def welcome
@@ -55,7 +56,6 @@ class Restaurant
           (qty).times do
           self.order << menu[(dish)]
           end
-          add_more?
         else
           puts "Sorry, wrong input, choose again."
           add_to_order
@@ -64,6 +64,7 @@ class Restaurant
       puts "Sorry, wrong input, choose again."
       add_to_order
     end
+    add_more?
   end
 
   def add_more?
@@ -84,11 +85,9 @@ class Restaurant
     order.each do |item, index|
       puts "#{index} #{item[:name]} #{item[:price]} kr"
     end
-    puts "And your total is:"
-    order_total
-    puts "A confirmation has been sent via sms."
+    puts "And your total is:" + order_total.to_s
     puts "Thank you and welcome back!"
-
+    send_message
   end
 
   def order_total

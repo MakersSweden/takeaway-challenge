@@ -36,12 +36,14 @@ describe 'order-registration' do
 
   it 'can add a dish to the order-sheet' do
     allow(subject).to receive(:user_input).and_return 1
+    allow(subject).to receive(:add_more?).and_return "no"
     subject.add_to_order
     expect(subject.order[0][:name]).to eq "Fried noodles"
   end
 
   it 'can add a dish in multiple qty to the order-sheet' do
     allow(subject).to receive(:user_input).and_return 2
+    allow(subject).to receive(:add_more?).and_return "no"
     subject.add_to_order
     expect(subject.order[1][:name]).to eq "Curry stew"
   end
@@ -54,24 +56,21 @@ describe 'order-registration' do
     expect(subject.verify_input_qty(20)).to eq false
   end
 
-   xit 'can add multiple dishes to the order-sheet' do
-
+  it 'can calculate the order-sheet total' do
+    allow(subject).to receive(:user_input).and_return 1
+    allow(subject).to receive(:add_more?).and_return "no"
+    subject.add_to_order
+    expect(subject.order_total).to eq 75
   end
 
-  xit 'can clear the order sheet' do
-
+  it 'can place the order' do
+    allow(subject).to receive(:user_input).and_return 1
+    allow(subject).to receive(:add_more?).and_return "no"
+    allow(subject).to receive(:send_message).and_return "Order sent"
+    subject.add_to_order
+    expect(subject.order_overview).to eq "Order sent"
   end
 
-  xit 'can calculate the order-sheet total' do
 
-  end
-
-  xit 'can place the order' do
-
-  end
-
-  xit 'can send an sms confirmation' do
-
-  end
 
 end
