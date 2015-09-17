@@ -5,8 +5,8 @@ class Customer
 	def initialize 
 
 		#Create a new menu and a new customer
-		@menu = menu.new 
-		@customer = customer.new
+		@menu = Menu.new 
+		@customer = Customer.new
 
 	end
 

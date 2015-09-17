@@ -11,7 +11,7 @@ class Menu
 		#menu['Fjärilsögonlock'] = 55.0
 		#menu['Nageltrång'] = 23.5
 
-		@menu = {'Svalbon' => 113.0, 'Kråkfötter' => 76.0, 'Nageltrång' => 23.5}
+		self.menu = {'Svalbon' => 113.0, 'Kråkfötter' => 76.0, 'Nageltrång' => 23.5}
 
 		
 
