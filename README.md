@@ -3,14 +3,14 @@ Takeaway Challenge
 
 Instructions
 -------
-* Challenge time: Friday, after lunch + the weekend
-* Be proactive with searching for knowledge: use google, your notes, books, etc but work on your own
-* You **must** submit a pull request to this repo with your code by 9am Monday morning
+* Challenge time: Friday, the entire day + the weekend if you need it
+* Feel free to use google, your notes, books, etc but work on your own
+* You must submit a pull request to this repo with your code by 9am Monday morning
 
 Task
 -----
 
-* Fill out your learning plan self review for the week (if you haven't already).
+* Fill out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
 * Fork this repo
 * run the command 'bundle' in the project directory to ensure you have all the gems
 * Write a Takeaway program with the following user stories:
@@ -51,5 +51,5 @@ I would like to receive a text such as "Thank you! Your order was placed and wil
 
 **Note: We are looking for good OO design and programming! Remember the Single Responsibility and Dependency Injection/Inversion principles!**
 
-[![Build Status](https://travis-ci.org/MakersSweden/airport_challenge.svg)](https://travis-ci.org/MakersSweden/airport_challenge)
-[![Coverage Status](https://coveralls.io/repos/MakersSweden/takeaway-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/MakersSweden/takeaway-challenge?branch=master)
+[![Build Status](https://travis-ci.org/makersacademy/takeaway-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/takeaway-challenge)
+[![Coverage Status](https://coveralls.io/repos/makersacademy/takeaway-challenge/badge.png)](https://coveralls.io/r/makersacademy/takeaway-challenge)
